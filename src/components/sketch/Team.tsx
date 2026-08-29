@@ -26,7 +26,7 @@ function Portrait({
           src={photo}
           alt={`${name}, ${role} at SKETCH`}
           loading="lazy"
-          className="h-full w-full object-cover object-top contrast-[1.06] saturate-[0.85] transition-transform duration-700 group-hover:scale-[1.04]"
+          className="h-full w-full scale-[1.06] object-contain object-bottom contrast-[1.06] saturate-[0.85] transition-transform duration-700 group-hover:scale-[1.12]"
         />
         <div className="scanlines pointer-events-none absolute inset-0 opacity-25" aria-hidden />
       </div>
@@ -78,7 +78,7 @@ export function Team() {
         <h3 className="display mt-28 text-[clamp(1.8rem,5vw,3.4rem)] text-foreground">
           Domain <span className="outline-ember">Leads</span>
         </h3>
-        <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-2 items-start gap-x-6 gap-y-14 sm:grid-cols-3 lg:grid-cols-4">
           {leads.map((m, i) => (
             <Portrait
               key={m.name}
@@ -86,7 +86,7 @@ export function Team() {
               role={m.role}
               photo={m.photo}
               size="sm"
-              tilt={i % 3 === 1 ? "sm:translate-y-6" : i % 3 === 2 ? "sm:-translate-y-3" : ""}
+              tilt={i % 3 === 1 ? "sm:translate-y-5" : i % 3 === 2 ? "sm:-translate-y-2" : ""}
             />
           ))}
         </div>
