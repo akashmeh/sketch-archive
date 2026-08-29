@@ -35,7 +35,7 @@ export function useParallaxLayers<T extends HTMLElement>() {
     const ctx = g.context(() => {
       const layers = root.querySelectorAll<HTMLElement>("[data-speed]");
       layers.forEach((layer) => {
-        const speed = parseFloat(layer.dataset.speed || "0");
+        const speed = parseFloat(layer.dataset["speed"] || "0");
         g.to(layer, {
           y: () => speed * -160,
           ease: "none",

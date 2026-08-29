@@ -5,8 +5,8 @@ import { SectionLabel } from "./Atmosphere";
 
 export function Domains() {
   const ref = useParallaxLayers<HTMLElement>();
-  const [activeId, setActiveId] = useState(domains[0].id);
-  const active = domains.find((d) => d.id === activeId)!;
+  const [activeId, setActiveId] = useState(domains[0]!.id);
+  const active = domains.find((d) => d.id === activeId) ?? domains[0]!;
 
   return (
     <section

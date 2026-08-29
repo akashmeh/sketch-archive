@@ -7,7 +7,7 @@ export function About() {
   const parallaxRef = useParallaxLayers<HTMLElement>();
   const revealRef = useReveal<HTMLDivElement>();
   const [active, setActive] = useState(0);
-  const node = timeline[active];
+  const node = timeline[active] ?? timeline[0]!;
 
   return (
     <section
