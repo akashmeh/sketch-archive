@@ -40,6 +40,10 @@ export type SketchEvent = {
   id: string;
   index: string;
   title: string;
+  /** Year bucket used by the archive filters. */
+  year: string;
+  /** Category used by the archive filters. */
+  category: "Workshop" | "Flagship" | "Webinar" | "Collab" | "Hackathon" | "Community";
   date?: string;
   time?: string;
   venue?: string;
@@ -51,6 +55,8 @@ export type SketchEvent = {
 export const events: SketchEvent[] = [
   {
     id: "inauguration",
+    year: "2025",
+    category: "Community",
     index: "REEL 01",
     title: "Inauguration Day",
     description:
@@ -63,6 +69,8 @@ export const events: SketchEvent[] = [
   },
   {
     id: "hormones",
+    year: "2025",
+    category: "Webinar",
     index: "REEL 02",
     title: "The Rollercoaster of Hormones in Your 20s",
     date: "12th July 2025",
@@ -80,6 +88,8 @@ export const events: SketchEvent[] = [
   },
   {
     id: "pixel",
+    year: "2025",
+    category: "Flagship",
     index: "REEL 03",
     title: "Pixel N' Play",
     date: "30th August 2025",
@@ -97,6 +107,8 @@ export const events: SketchEvent[] = [
   },
   {
     id: "first-commit",
+    year: "2025",
+    category: "Workshop",
     index: "REEL 04",
     title: "First Commit — A Workshop on GitHub Basics",
     date: "24th September 2025",
@@ -110,6 +122,8 @@ export const events: SketchEvent[] = [
   },
   {
     id: "among-us",
+    year: "2026",
+    category: "Flagship",
     index: "REEL 05",
     title: "Among Us — Control Room",
     date: "27th February 2026",
@@ -126,6 +140,8 @@ export const events: SketchEvent[] = [
   },
   {
     id: "ai-products",
+    year: "2026",
+    category: "Workshop",
     index: "REEL 06",
     title: "Building Intelligent Products with AI",
     date: "8th April 2026",
@@ -143,6 +159,8 @@ export const events: SketchEvent[] = [
   },
   {
     id: "pinnacle",
+    year: "2026",
+    category: "Collab",
     index: "REEL 07",
     title: "Pinnacle Hacks — Design Partner",
     description:
@@ -155,6 +173,8 @@ export const events: SketchEvent[] = [
   },
   {
     id: "nxtgen",
+    year: "2026",
+    category: "Hackathon",
     index: "REEL 08",
     title: "NXTGEN Hackathon — Texus '26",
     venue: "EA Mall, IVB Center, Chennai",
