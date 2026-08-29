@@ -74,7 +74,7 @@ export function Anniversary() {
     <section
       ref={ref}
       id="ten-years"
-      className="relative overflow-hidden border-t border-border/60 px-5 py-24 md:py-32"
+      className="relative overflow-hidden section-seam px-5 py-24 md:py-32"
       aria-labelledby="ten-title"
     >
       <div

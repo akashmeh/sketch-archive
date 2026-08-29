@@ -12,7 +12,7 @@ export function Domains() {
     <section
       ref={ref}
       id="domains"
-      className="relative overflow-hidden border-t border-border/60 px-5 py-24 md:py-32"
+      className="relative overflow-hidden section-seam px-5 py-24 md:py-32"
       aria-labelledby="domains-title"
     >
       <div data-speed="0.12" className="retro-grid absolute inset-[-15%] opacity-25" aria-hidden />

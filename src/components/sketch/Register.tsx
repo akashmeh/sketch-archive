@@ -8,7 +8,7 @@ export function Register() {
     <section
       ref={ref}
       id="register"
-      className="relative overflow-hidden border-t border-border/60 px-5 py-28 md:py-40"
+      className="relative overflow-hidden section-seam px-5 py-28 md:py-40"
       aria-labelledby="register-title"
     >
       <div data-speed="0.14" className="retro-grid absolute inset-[-20%] opacity-30" aria-hidden />

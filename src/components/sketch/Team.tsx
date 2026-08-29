@@ -50,7 +50,7 @@ export function Team() {
     <section
       ref={parallaxRef}
       id="team"
-      className="relative overflow-hidden border-t border-border/60 px-5 py-24 md:py-32"
+      className="relative overflow-hidden section-seam px-5 py-24 md:py-32"
       aria-labelledby="team-title"
     >
       <div

@@ -45,7 +45,7 @@ export function Rewind() {
     <section
       ref={parallaxRef}
       id="rewind"
-      className="relative overflow-hidden border-t border-border/60 px-5 py-24 md:py-32"
+      className="relative overflow-hidden section-seam px-5 py-24 md:py-32"
       aria-labelledby="rewind-title"
     >
       <div data-speed="0.1" className="retro-grid absolute inset-[-15%] opacity-20" aria-hidden />
