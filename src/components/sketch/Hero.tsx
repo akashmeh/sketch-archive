@@ -88,7 +88,7 @@ export function Hero() {
           SKETCH
         </span>
 
-        <div className="relative w-full max-w-[34rem]">
+        <div className="relative w-full max-w-[38rem]">
           <img
             src={crt}
             width={1280}
