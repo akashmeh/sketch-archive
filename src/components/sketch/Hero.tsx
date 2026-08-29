@@ -83,12 +83,12 @@ export function Hero() {
       >
         <span
           aria-hidden
-          className="display outline-ember pointer-events-none absolute -top-[9vh] select-none text-center text-[clamp(6rem,30vw,26rem)] leading-none opacity-30"
+          className="display outline-ember pointer-events-none absolute -top-[12vh] select-none text-center text-[clamp(6rem,30vw,26rem)] leading-none opacity-30"
         >
           SKETCH
         </span>
 
-        <div className="relative w-full max-w-3xl">
+        <div className="relative w-full max-w-[34rem]">
           <img
             src={crt}
             width={1280}
@@ -110,9 +110,9 @@ export function Hero() {
 
       <div
         data-cinema="fade"
-        className="relative z-30 mt-8 w-full max-w-6xl text-center"
+        className="relative z-30 mt-6 w-full max-w-6xl text-center"
       >
-        <p className="display text-[clamp(2rem,7vw,6rem)] text-foreground">
+        <p className="display text-[clamp(2rem,6.4vw,5.2rem)] text-foreground">
           Design. <span className="outline-type">Develop.</span> Deliver.
         </p>
         <p className="mono-label mt-4 text-primary">10 Years of Turning Ideas Into Impact</p>
@@ -121,7 +121,7 @@ export function Hero() {
       <div
         data-cinema="fade"
         aria-hidden
-        className="absolute bottom-[6vh] left-0 z-30 w-full overflow-hidden border-y border-border/40 bg-[oklch(0.11_0.012_48/0.7)] py-2"
+        className="absolute bottom-[7.5vh] left-0 z-30 w-full overflow-hidden border-y border-border/40 bg-[oklch(0.11_0.012_48/0.7)] py-2"
       >
         <div className="animate-marquee flex w-max gap-10 font-mono text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
           {Array.from({ length: 2 }).map((_, i) => (
