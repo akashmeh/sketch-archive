@@ -19,7 +19,7 @@ export function Register() {
       />
 
       <div className="relative mx-auto max-w-4xl">
-        <div className="panel offset-shadow relative overflow-hidden">
+        <div className="panel relative overflow-hidden border-x-0">
           <div className="flex items-center justify-between border-b border-border/70 bg-[oklch(0.14_0.016_48)] px-4 py-2 font-mono text-[0.6rem] uppercase tracking-[0.26em] text-primary">
             <span>sketch@club:~</span>
             <span className="text-muted-foreground">session 2026</span>
@@ -38,7 +38,7 @@ export function Register() {
             <p className="mono-label text-accent">&gt; run join.sketch</p>
             <h2
               id="register-title"
-              className="display crt-glow mt-6 text-[clamp(2.2rem,8vw,5.5rem)] text-accent"
+              className="display crt-glow mt-6 text-[clamp(3rem,12vw,9rem)] text-accent"
             >
               Ready to join SKETCH?
             </h2>
