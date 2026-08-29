@@ -13,7 +13,7 @@ export function About() {
     <section
       ref={parallaxRef}
       id="about"
-      className="relative overflow-hidden border-t border-border/60 px-5 py-24 md:py-32"
+      className="relative overflow-hidden section-seam px-5 py-24 md:py-32"
       aria-labelledby="about-title"
     >
       <div data-speed="0.12" className="retro-grid absolute inset-[-15%] opacity-25" aria-hidden />
@@ -24,7 +24,7 @@ export function About() {
         <h2
           id="about-title"
           data-reveal
-          className="display mt-6 text-[clamp(2.6rem,9vw,7rem)] text-foreground"
+          className="display mt-6 text-[clamp(3.2rem,13vw,11rem)] text-foreground"
         >
           About <span className="outline-ember">SKETCH</span>
         </h2>
@@ -88,15 +88,15 @@ export function About() {
           </div>
         </div>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
+        <div className="mt-14 flex flex-wrap items-end gap-x-16 gap-y-8">
           {[
             { k: "Founded", v: "2015" },
             { k: "Domains", v: "06" },
             { k: "Motto", v: "D.D.D." },
           ].map((s) => (
-            <div key={s.k} data-reveal className="border border-border/70 px-5 py-5">
+            <div key={s.k} data-reveal>
               <p className="mono-label text-muted-foreground">{s.k}</p>
-              <p className="display mt-2 text-4xl text-primary">{s.v}</p>
+              <p className="display mt-1 text-[clamp(3rem,8vw,6rem)] text-primary">{s.v}</p>
             </div>
           ))}
         </div>

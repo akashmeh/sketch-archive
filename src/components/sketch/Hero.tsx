@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import crt from "@/assets/crt-workstation.png";
-import { useParallaxLayers } from "@/hooks/use-scroll-fx";
+import { useHeroCinema } from "@/hooks/use-scroll-fx";
 
 const BOOT_LINES = [
   "SKETCH OS v10.0 — READY",
@@ -44,44 +44,57 @@ function ScreenTerminal() {
 }
 
 export function Hero() {
-  const ref = useParallaxLayers<HTMLElement>();
-  const marqueeRef = useRef<HTMLDivElement>(null);
+  const ref = useHeroCinema<HTMLElement>();
 
   return (
     <section
       ref={ref}
       id="hero"
-      className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-5 pt-20 pb-10"
+      className="relative flex h-[100svh] flex-col items-center justify-center overflow-hidden px-5"
     >
-      <div data-speed="0.15" className="retro-grid absolute inset-[-20%] opacity-60" aria-hidden />
+      <div className="retro-grid absolute inset-[-20%] opacity-50" aria-hidden />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-1/3 h-[40vh] opacity-40"
-        style={{ background: "radial-gradient(ellipse, var(--ember), transparent 68%)" }}
+        className="pointer-events-none absolute inset-x-0 top-1/4 h-[52vh] opacity-45"
+        style={{ background: "radial-gradient(ellipse, var(--ember), transparent 66%)" }}
       />
 
+      {/* Cinematic letterbox bars */}
       <div
-        data-speed="0.5"
-        className="pointer-events-none absolute inset-x-0 top-[16%] z-10 select-none text-center"
+        data-cinema="bar"
         aria-hidden
-      >
-        <span className="display outline-ember block text-[clamp(5rem,26vw,20rem)] opacity-40">
-          SKETCH
-        </span>
-      </div>
+        className="letterbox pointer-events-none absolute inset-x-0 top-0 z-30 h-[6vh]"
+      />
+      <div
+        data-cinema="bar"
+        aria-hidden
+        className="letterbox pointer-events-none absolute inset-x-0 bottom-0 z-30 h-[6vh] rotate-180"
+      />
 
       <h1 className="sr-only">
         SKETCH — a student technology and innovation club. Design. Develop. Deliver.
       </h1>
 
-      <div data-speed="0.25" className="relative z-20 mt-[10vh] w-full max-w-3xl">
-        <div className="relative">
+      {/* The whole frame dollies forward into the screen */}
+      <div
+        data-cinema="stage"
+        className="relative z-20 flex w-full flex-col items-center will-change-transform"
+        style={{ transformOrigin: "50% 40%" }}
+      >
+        <span
+          aria-hidden
+          className="display outline-ember pointer-events-none absolute -top-[12vh] select-none text-center text-[clamp(6rem,30vw,26rem)] leading-none opacity-30"
+        >
+          SKETCH
+        </span>
+
+        <div className="relative w-full max-w-[38rem]">
           <img
             src={crt}
             width={1280}
             height={1024}
             alt="Retro CRT computer workstation running SKETCH OS"
-            className="animate-flicker w-full drop-shadow-[0_40px_60px_oklch(0.08_0.01_48/0.8)]"
+            className="animate-flicker w-full drop-shadow-[0_40px_80px_oklch(0.06_0.01_48/0.9)]"
           />
           {/* Screen overlay, positioned over the monitor glass */}
           <div className="absolute left-[26.5%] top-[10.5%] h-[36.5%] w-[41.5%] overflow-hidden rounded-[3px] bg-[oklch(0.14_0.03_48)]">
@@ -95,25 +108,20 @@ export function Hero() {
         </div>
       </div>
 
-      <div data-speed="0.1" className="relative z-30 mt-10 w-full max-w-5xl text-center">
-        <p className="display text-[clamp(1.6rem,5.2vw,4rem)] text-foreground">
+      <div
+        data-cinema="fade"
+        className="relative z-30 mt-6 w-full max-w-6xl text-center"
+      >
+        <p className="display text-[clamp(2rem,6.4vw,5.2rem)] text-foreground">
           Design. <span className="outline-type">Develop.</span> Deliver.
         </p>
-        <p className="mono-label mt-5 text-primary">10 Years of Turning Ideas Into Impact</p>
+        <p className="mono-label mt-4 text-primary">10 Years of Turning Ideas Into Impact</p>
       </div>
 
-      <a
-        href="#about"
-        className="group relative z-30 mt-10 inline-flex items-center gap-3 border border-primary/60 px-5 py-2 font-mono text-[0.7rem] uppercase tracking-[0.26em] text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
-      >
-        Scroll to enter
-        <span className="transition-transform group-hover:translate-x-1">→</span>
-      </a>
-
       <div
-        ref={marqueeRef}
+        data-cinema="fade"
         aria-hidden
-        className="absolute bottom-0 left-0 w-full overflow-hidden border-y border-border/60 bg-[oklch(0.11_0.012_48)] py-2"
+        className="absolute bottom-[7.5vh] left-0 z-30 w-full overflow-hidden border-y border-border/40 bg-[oklch(0.11_0.012_48/0.7)] py-2"
       >
         <div className="animate-marquee flex w-max gap-10 font-mono text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
           {Array.from({ length: 2 }).map((_, i) => (

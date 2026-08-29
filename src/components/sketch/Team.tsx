@@ -50,7 +50,7 @@ export function Team() {
     <section
       ref={parallaxRef}
       id="team"
-      className="relative overflow-hidden border-t border-border/60 px-5 py-24 md:py-32"
+      className="relative overflow-hidden section-seam px-5 py-24 md:py-32"
       aria-labelledby="team-title"
     >
       <div
@@ -63,7 +63,7 @@ export function Team() {
 
       <div ref={revealRef} className="relative mx-auto max-w-6xl">
         <SectionLabel index="05">People</SectionLabel>
-        <h2 id="team-title" className="display mt-6 text-[clamp(2.4rem,8vw,6rem)] text-foreground">
+        <h2 id="team-title" className="display mt-6 text-[clamp(3.2rem,13vw,11rem)] text-foreground">
           Core <span className="outline-ember">Team</span>
         </h2>
 

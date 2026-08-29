@@ -12,21 +12,21 @@ export function Domains() {
     <section
       ref={ref}
       id="domains"
-      className="relative overflow-hidden border-t border-border/60 px-5 py-24 md:py-32"
+      className="relative overflow-hidden section-seam px-5 py-24 md:py-32"
       aria-labelledby="domains-title"
     >
       <div data-speed="0.12" className="retro-grid absolute inset-[-15%] opacity-25" aria-hidden />
 
       <div className="relative mx-auto max-w-6xl">
         <SectionLabel index="04">Control Panel</SectionLabel>
-        <h2 id="domains-title" className="display mt-6 text-[clamp(2.4rem,8vw,6rem)] text-foreground">
+        <h2 id="domains-title" className="display mt-6 text-[clamp(3.2rem,13vw,11rem)] text-foreground">
           Select a <span className="outline-ember">Domain</span>
         </h2>
         <p className="mt-4 max-w-lg font-mono text-xs leading-relaxed text-muted-foreground">
           Six domains keep SKETCH running. Choose a channel to load its brief and its people.
         </p>
 
-        <div className="panel offset-shadow mt-12 md:mt-16">
+        <div className="panel mt-12 md:mt-16">
           <div className="flex items-center justify-between border-b border-border/70 bg-[oklch(0.14_0.016_48)] px-4 py-2 font-mono text-[0.6rem] uppercase tracking-[0.26em] text-primary">
             <span>channel select</span>
             <span className="text-muted-foreground">{active.code}</span>

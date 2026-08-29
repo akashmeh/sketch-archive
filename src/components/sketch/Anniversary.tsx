@@ -47,9 +47,9 @@ function elapsedSince(from: Date, now: Date): Elapsed {
 function Digit({ value, unit }: { value: number; unit: string }) {
   const text = String(value).padStart(2, "0");
   return (
-    <div className="relative flex-1 border border-border/80 bg-[oklch(0.12_0.014_48)] px-2 py-4 text-center md:px-4 md:py-6">
+    <div className="relative flex-1 border-r border-border/50 bg-[oklch(0.12_0.014_48)] px-2 py-4 text-center last:border-r-0 md:px-4 md:py-8">
       <div className="scanlines pointer-events-none absolute inset-0 opacity-40" aria-hidden />
-      <span className="crt-glow display block text-[clamp(1.8rem,5.4vw,4.4rem)] tabular-nums text-accent">
+      <span className="crt-glow display block text-[clamp(2rem,6.4vw,5.6rem)] tabular-nums text-accent">
         {text}
       </span>
       <span className="mt-2 block font-mono text-[0.55rem] uppercase tracking-[0.24em] text-muted-foreground">
@@ -74,20 +74,20 @@ export function Anniversary() {
     <section
       ref={ref}
       id="ten-years"
-      className="relative overflow-hidden border-t border-border/60 px-5 py-24 md:py-32"
+      className="relative overflow-hidden section-seam px-5 py-24 md:py-32"
       aria-labelledby="ten-title"
     >
       <div
         data-speed="0.3"
         aria-hidden
-        className="display pointer-events-none absolute inset-x-0 top-6 select-none text-center text-[clamp(6rem,24vw,18rem)] text-secondary/40"
+        className="display pointer-events-none absolute inset-x-0 top-6 select-none text-center text-[clamp(8rem,30vw,26rem)] text-secondary/40"
       >
         10 YEARS
       </div>
 
       <div className="relative mx-auto max-w-5xl">
         <SectionLabel index="02">Ten Years</SectionLabel>
-        <h2 id="ten-title" className="display mt-6 text-[clamp(2.4rem,8vw,6rem)] text-foreground">
+        <h2 id="ten-title" className="display mt-6 text-[clamp(3.2rem,13vw,11rem)] text-foreground">
           2015 <span className="text-primary">—</span> 2026
         </h2>
         <p className="mt-4 max-w-lg text-xl text-muted-foreground">
@@ -96,7 +96,7 @@ export function Anniversary() {
 
         <div
           data-speed="0.06"
-          className="panel offset-shadow mt-12 p-4 md:p-8"
+          className="panel mt-12 border-x-0 p-4 md:p-8"
           role="timer"
           aria-live="off"
         >
@@ -107,7 +107,7 @@ export function Anniversary() {
               live
             </span>
           </div>
-          <div className="flex flex-wrap gap-2 md:flex-nowrap md:gap-3">
+          <div className="flex flex-wrap md:flex-nowrap">
             {t ? (
               <>
                 <Digit value={t.years} unit="Years" />

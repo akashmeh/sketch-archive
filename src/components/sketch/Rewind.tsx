@@ -45,14 +45,14 @@ export function Rewind() {
     <section
       ref={parallaxRef}
       id="rewind"
-      className="relative overflow-hidden border-t border-border/60 px-5 py-24 md:py-32"
+      className="relative overflow-hidden section-seam px-5 py-24 md:py-32"
       aria-labelledby="rewind-title"
     >
       <div data-speed="0.1" className="retro-grid absolute inset-[-15%] opacity-20" aria-hidden />
 
       <div ref={revealRef} className="relative mx-auto max-w-6xl">
         <SectionLabel index="03">Archive</SectionLabel>
-        <h2 id="rewind-title" className="display mt-6 text-[clamp(2.6rem,10vw,8rem)] text-foreground">
+        <h2 id="rewind-title" className="display mt-6 text-[clamp(3.4rem,15vw,13rem)] text-foreground">
           Re<span className="outline-ember">wind</span>
         </h2>
         <p className="mt-4 max-w-lg font-mono text-xs leading-relaxed text-muted-foreground">
@@ -93,7 +93,7 @@ export function Rewind() {
 
                   <div data-reveal data-speed="0.05" className="relative">
                     <p className="mono-label text-primary">{ev.index}</p>
-                    <h3 className="display mt-3 text-[clamp(1.7rem,4.6vw,3.4rem)] text-foreground">
+                    <h3 className="display mt-3 text-[clamp(2.2rem,6vw,4.6rem)] text-foreground">
                       {ev.title}
                     </h3>
 

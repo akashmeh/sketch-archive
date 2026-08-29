@@ -87,3 +87,46 @@ export function useReveal<T extends HTMLElement>() {
 }
 
 export { ensureGsap, isSimplified };
+
+/**
+ * Cinematic hero: pins the hero and dollies the CRT stage forward until the
+ * screen swallows the viewport, so the next section emerges from inside it.
+ * Disabled on mobile / reduced motion.
+ */
+export function useHeroCinema<T extends HTMLElement>() {
+  const ref = useRef<T | null>(null);
+
+  useEffect(() => {
+    const root = ref.current;
+    if (!root || isSimplified()) return;
+    const g = ensureGsap();
+
+    const ctx = g.context(() => {
+      const stage = root.querySelector<HTMLElement>('[data-cinema="stage"]');
+      const fades = root.querySelectorAll<HTMLElement>('[data-cinema="fade"]');
+      const bars = root.querySelectorAll<HTMLElement>('[data-cinema="bar"]');
+
+      const tl = g.timeline({
+        scrollTrigger: {
+          trigger: root,
+          start: "top top",
+          end: "+=150%",
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1,
+        },
+      });
+
+      if (fades.length) tl.to(fades, { opacity: 0, y: -60, duration: 0.3 }, 0);
+      if (bars.length) tl.to(bars, { height: "14vh", duration: 0.5 }, 0);
+      if (stage) {
+        tl.to(stage, { scale: 4.2, ease: "power2.in", duration: 1 }, 0);
+        tl.to(stage, { opacity: 0, duration: 0.22 }, 0.82);
+      }
+    }, root);
+
+    return () => ctx.revert();
+  }, []);
+
+  return ref;
+}
