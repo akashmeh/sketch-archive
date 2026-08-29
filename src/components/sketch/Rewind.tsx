@@ -210,7 +210,7 @@ export function Rewind() {
             aria-hidden
             className="absolute bottom-0 left-[0.72rem] top-0 w-px bg-gradient-to-b from-transparent via-primary/45 to-transparent md:left-6"
           />
-          {list.map((ev, i) => (
+          {list.map((ev) => (
             <Record
               key={ev.id}
               ev={ev}
